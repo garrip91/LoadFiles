@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from LoadFilesApp.views import load_files
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('loadfiles/', load_files),
 ]
