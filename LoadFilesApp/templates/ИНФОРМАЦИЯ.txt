@@ -1,0 +1,9 @@
+1. 
+26-я строка в файле 'base.html':
+|
+<a class="nav-link" href="{% url 'book_list' %}">Model Forms Upload</a>
+
+2.
+29-я строка в файле 'base.html':
+|
+<a class="nav-link" href="{% url 'class_book_list' %}">Model Forms Upload (CBV)</a>

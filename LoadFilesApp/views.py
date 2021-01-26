@@ -1,14 +1,17 @@
 from django.shortcuts import render
 
+from django.views.generic import TemplateView
+from django.core.files.storage import FileSystemStorage
+
 # Create your views here:
-def load_files(request):
+class Home(TemplateView):
+    template_name = 'home.html'
+
+def upload(request):
     if request.method == 'POST':
-        form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = DocumentForm()
-    return render(request, 'loadfiles.html', {
-        'form': form
-    })
+        uploaded_file = request.FILES['document']
+        #print(uploaded_file.name)
+        #print(uploaded_file.size)
+        fs = FileSystemStorage()
+        fs.save(uploaded_file.name, uploaded_file)
+    return render(request, 'upload.html')
