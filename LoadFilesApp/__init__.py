@@ -1,1 +1,1 @@
-default_app_config = "scraping.apps.LoadfilesappConfig"
+default_app_config = "LoadFilesApp.apps.LoadfilesappConfig"
